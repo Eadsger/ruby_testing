@@ -55,15 +55,22 @@ describe 'lucky numbers with rotate! method' do
 
   context 'when rotating the array of lucky numbers' do
     # remove the 'x' before running this test
-    xit 'will change the first value to 7' do
+    it 'will change the first value to 7' do
+      lucky_numbers.rotate!
+      expect(lucky_numbers.first).to eq(7)
     end
 
     # remove the 'x' before running this test
-    xit 'will change the last value to 3' do
+    it 'will change the last value to 3' do
+      lucky_numbers.rotate!
+      expect(lucky_numbers.last).to eq(3)
     end
 
     # remove the 'x' before running this test
-    xit 'will change the first value to 7 and last value to 3' do
+    it 'will change the first value to 7 and last value to 3' do
+      lucky_numbers.rotate!
+      expect(lucky_numbers.first).to eq(7)
+      expect(lucky_numbers.last).to eq(3)
     end
   end
 end

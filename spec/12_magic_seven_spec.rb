@@ -70,34 +70,56 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    it 'subtracts 4 from the initial value' do
+      result = game.subtract_four(10)
+      expect(result).to eq(6)
+    end
   end
 
   describe '#divide_by_two' do
+    it 'divides the initial value by 2' do
+      result = game.divide_by_two(16)
+      expect(result).to eq(8)
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
   describe '#subtract_random_number' do
+    it 'subtracts the random number from the initial value' do
+      game_with_random = described_class.new(5)
+      result = game_with_random.subtract_random_number(15)
+      expect(result).to eq(10)
+    end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
+    context 'when the random number is 3' do
+      let(:game_with_random) { described_class.new(3) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game_with_random.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 8' do
+      let(:game_with_random) { described_class.new(8) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game_with_random.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 12' do
+      let(:game_with_random) { described_class.new(12) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game_with_random.play
+        expect(result).to eq(7)
       end
     end
   end
